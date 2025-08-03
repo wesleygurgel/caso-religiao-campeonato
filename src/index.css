@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: #333;
+  background-color: #f9f9f9;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1.serif, h2.serif, h3.serif {
+  font-family: 'Playfair Display', serif;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+}
+
+.serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-white bg-opacity-10 backdrop-blur-md border border-white/20;
+}
+
+/* Custom button styles */
+.btn {
+  @apply px-5 py-2.5 rounded-md font-medium transition-all duration-300 inline-flex items-center justify-center shadow-sm;
+}
+
+.btn-primary {
+  @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-2 focus:ring-primary-300 focus:outline-none shadow-primary-500/20;
+}
+
+.btn-secondary {
+  @apply bg-white text-primary-600 border border-primary-500 hover:bg-primary-50 focus:ring-2 focus:ring-primary-300 focus:outline-none;
+}
+
+.btn-gold {
+  @apply bg-gold-500 text-white hover:bg-gold-600 focus:ring-2 focus:ring-gold-300 focus:outline-none shadow-gold-500/20;
+}
+
+.btn-outline {
+  @apply bg-transparent border border-white/20 text-white hover:bg-white/10 focus:ring-2 focus:ring-white/30 focus:outline-none;
+}
+
+/* WhatsApp floating button */
+.whatsapp-button {
+  @apply fixed bottom-6 right-6 bg-green-500 text-white p-3 rounded-full shadow-lg z-50 hover:bg-green-600 transition-all duration-200 hover:scale-110;
+}
+
+/* Section styling */
+section {
+  @apply py-16 md:py-24;
+}
+
+/* Card styling */
+.card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+}
+
+/* Gradient text */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-gold-500;
+}
+
+/* Animation utilities */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-1;
+}
+
+/* Responsive container for sections */
+.container-responsive {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}

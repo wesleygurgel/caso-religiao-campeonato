@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle with primary color (assuming primary is a blue shade) -->
+  <circle cx="50" cy="50" r="48" fill="#1a365d" />
+  
+  <!-- Gold accent (similar to the gold accents in the UI) -->
+  <path d="M50 10 A40 40 0 0 1 90 50 L50 50 Z" fill="#d4af37" opacity="0.8" />
+  
+  <!-- Letter F in white -->
+  <path d="M35 30 H65 V40 H45 V45 H60 V55 H45 V70 H35 Z" fill="white" />
+  
+  <!-- Scale icon to represent legal/tax services -->
+  <path d="M70 65 H80 V70 H60 V65 H70 Z M65 65 V60 L70 55 L75 60 V65 Z" fill="#d4af37" />
+</svg>
