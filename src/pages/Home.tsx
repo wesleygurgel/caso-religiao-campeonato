@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPinIcon } from 'lucide-react';
 import CenarioSocial from '../components/CenarioSocial';
+import { Timeline, timelineData } from '../components/Timeline';
 
 export default function Home() {
   return (
@@ -46,6 +47,11 @@ export default function Home() {
       {/* Cenário Social section with ID for anchor link */}
       <div id="cenario-social" className="scroll-mt-16">
         <CenarioSocial />
+      </div>
+      
+      {/* Timeline section with ID for anchor link */}
+      <div id="cronologia" className="scroll-mt-16">
+        <Timeline data={timelineData} />
       </div>
     </div>
   );
