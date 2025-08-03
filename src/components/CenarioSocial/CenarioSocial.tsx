@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Users, Sparkles, Info, Scale } from 'lucide-react';
 import ReligionCard, { ReligionData } from './ReligionCard';
-import ReligionModal from './ReligionModal';
+import FraternidadePurezaModal from './FraternidadePurezaModal';
+import CirculoErvasModal from './CirculoErvasModal';
 
 // Data for the two religions
 const religionsData: ReligionData[] = [
@@ -10,63 +12,19 @@ const religionsData: ReligionData[] = [
     name: 'Fraternidade da Pureza Divina',
     followers: 'Seguida por cerca de 35% da população',
     dogma: 'Abstenção de substâncias que alterem a consciência',
-    color: 'bg-indigo-700',
+    color: 'bg-gradient-to-br from-indigo-600 to-indigo-800 dark:from-indigo-700 dark:to-indigo-900',
+    icon: 'users',
   },
   {
     id: 'circulo',
     name: 'Círculo das Ervas Eternas',
     followers: 'Seguidores: 4% da população',
     dogma: 'Purificação das aflições humanas com chás medicinais e rituais',
-    color: 'bg-emerald-700',
+    color: 'bg-gradient-to-br from-emerald-600 to-emerald-800 dark:from-emerald-700 dark:to-emerald-900',
+    icon: 'sparkles',
   }
 ];
 
-// Additional information for each religion
-const religionsAdditionalInfo = {
-  fraternidade: {
-    history: 'A Fraternidade da Pureza Divina surgiu há cerca de 50 anos em Novas Veredas, fundada por um grupo de médicos e líderes comunitários preocupados com o aumento do consumo de substâncias psicoativas na região. Inicialmente um movimento de saúde pública, gradualmente adquiriu características religiosas, com rituais de purificação e uma hierarquia bem definida.',
-    figures: [
-      {
-        name: 'Juan Vidigal',
-        role: 'Influenciador e dono da VidiBet',
-        description: 'Figura pública associada à Fraternidade, utiliza sua plataforma para promover os valores do grupo e financiar suas atividades.'
-      },
-      {
-        name: 'Mestre Pablo Gaviria',
-        role: 'Líder espiritual',
-        description: 'Principal líder da Fraternidade, também é proprietário do Instituto Esperança e Luz, uma clínica de recuperação para dependentes químicos.'
-      }
-    ],
-    practices: [
-      'Rituais semanais de purificação',
-      'Abstinência total de álcool, drogas e medicamentos psicotrópicos',
-      'Meditação diária para "limpar a mente"',
-      'Doações regulares para o Instituto Esperança e Luz'
-    ],
-    hasAudio: true
-  },
-  circulo: {
-    history: 'O Círculo das Ervas Eternas tem raízes ancestrais, combinando conhecimentos indígenas sobre plantas medicinais com práticas espirituais diversas. Formalmente estabelecido há cerca de 15 anos, o grupo ganhou notoriedade por seus rituais de cura e pelo uso de chás medicinais considerados sagrados.',
-    figures: [
-      {
-        name: 'Dona Toninha',
-        role: 'Matriarca e curandeira',
-        description: 'Idosa respeitada por seu vasto conhecimento sobre ervas medicinais e rituais de cura. Lidera as cerimônias principais do Círculo.'
-      },
-      {
-        name: 'Coletivo dos Sete',
-        role: 'Conselho administrativo',
-        description: 'Grupo de sete membros que administra as atividades do Círculo, organiza eventos e gerencia os recursos da comunidade.'
-      }
-    ],
-    practices: [
-      'Cerimônias de cura com chás medicinais',
-      'Cultivo comunitário de plantas sagradas',
-      'Rituais de conexão com a natureza em datas específicas',
-      'Compartilhamento de conhecimentos sobre ervas e seus usos'
-    ]
-  }
-};
 
 export default function CenarioSocial() {
   const [selectedReligion, setSelectedReligion] = useState<ReligionData | null>(null);
@@ -106,20 +64,33 @@ export default function CenarioSocial() {
     }
   };
 
+  // Icon mapping
+  const iconMap = {
+    users: <Users className="h-6 w-6" />,
+    sparkles: <Sparkles className="h-6 w-6" />,
+    scale: <Scale className="h-6 w-6" />
+  };
+
   return (
-    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-neutral-50 dark:bg-neutral-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center justify-center mb-4 px-4 py-1.5 rounded-full bg-primary-100 dark:bg-primary-900/50 text-primary-800 dark:text-primary-200 text-sm font-medium">
+            <Info className="w-4 h-4 mr-2" />
+            Contexto Religioso
+          </div>
+          
           <motion.h2 
-            className="text-3xl font-bold text-gray-900 sm:text-4xl mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-neutral-900 dark:text-white mb-3 sm:mb-4 tracking-tight"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
             Cenário Social
           </motion.h2>
+          
           <motion.p 
-            className="max-w-2xl mx-auto text-xl text-gray-600"
+            className="max-w-2xl mx-auto text-lg sm:text-xl text-neutral-700 dark:text-neutral-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -129,7 +100,7 @@ export default function CenarioSocial() {
         </div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -139,18 +110,50 @@ export default function CenarioSocial() {
               <ReligionCard 
                 religion={religion} 
                 onClick={() => handleOpenModal(religion)} 
+                icon={religion.icon && iconMap[religion.icon as keyof typeof iconMap]}
               />
             </motion.div>
           ))}
         </motion.div>
+        
+        {/* Decorative divider */}
+        <div className="my-12 sm:my-16 flex items-center justify-center">
+          <div className="h-px bg-neutral-200 dark:bg-neutral-700 w-full max-w-xs"></div>
+          <div className="mx-3 sm:mx-4 text-neutral-400 dark:text-neutral-500">
+            <Scale className="h-5 w-5 sm:h-6 sm:w-6" />
+          </div>
+          <div className="h-px bg-neutral-200 dark:bg-neutral-700 w-full max-w-xs"></div>
+        </div>
+        
+        {/* Additional context section */}
+        <div className="prose prose-base sm:prose-lg dark:prose-invert mx-auto max-w-3xl px-2">
+          <h3 className="text-center font-serif text-xl sm:text-2xl">Sobre o Estado de Novas Veredas</h3>
+          <p className="text-neutral-700 dark:text-neutral-300">
+            Novas Veredas é um estado fictício onde diferentes grupos religiosos coexistem, 
+            cada um com suas próprias crenças, práticas e influências sociais. As tensões entre 
+            esses grupos, especialmente entre a Fraternidade da Pureza Divina e o Círculo das 
+            Ervas Eternas, formam o pano de fundo para importantes questões jurídicas relacionadas 
+            à liberdade religiosa e seus limites.
+          </p>
+        </div>
       </div>
 
-      <ReligionModal 
-        religion={selectedReligion}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        additionalInfo={religionsAdditionalInfo}
-      />
+      {/* Render the appropriate modal based on the selected religion */}
+      {selectedReligion && selectedReligion.id === 'fraternidade' && (
+        <FraternidadePurezaModal
+          religion={selectedReligion}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+        />
+      )}
+      
+      {selectedReligion && selectedReligion.id === 'circulo' && (
+        <CirculoErvasModal
+          religion={selectedReligion}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+        />
+      )}
     </div>
   );
 }
