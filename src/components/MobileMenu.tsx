@@ -89,7 +89,7 @@ export default function MobileMenu() {
 
               <div className="p-5 mt-auto border-t border-neutral-200 dark:border-neutral-800">
                 <p className="text-sm text-neutral-500 dark:text-neutral-400">
-                  &copy; {new Date().getFullYear()} Caso Religião Campeonato
+                  &copy; {new Date().getFullYear()} Caso Campeonato
                 </p>
               </div>
             </motion.div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, User, BookOpen, Sparkles, Music, AlertTriangle, Calendar, Award, Flame, FileText } from 'lucide-react';
+import { X, User, Sparkles, Music, AlertTriangle, Award, Flame, FileText } from 'lucide-react';
 import { ReligionData } from './ReligionCard';
 
 interface FraternidadePurezaModalProps {
@@ -193,8 +193,34 @@ export default function FraternidadePurezaModal({
                         </div>
                       </div>
                       <p className="dark:text-neutral-300 text-sm mt-2">
-                        Influenciador digital com milhões de seguidores, fisiculturista premiado e proprietário da plataforma de apostas VidiBet.
+                        Influenciador digital com milhões de seguidores, fisiculturista premiado e proprietário da plataforma de apostas VidiBet. 
+                        Associava sua trajetória de superação pessoal aos preceitos da Fraternidade e, em suas redes sociais, exaltava os princípios de pureza e denunciava os "vícios que corrompem o corpo e o espírito".
                       </p>
+                      
+                      {/* Audio section for Juan Vidigal */}
+                      <div className="mt-3 bg-indigo-50 dark:bg-indigo-900/10 p-3 rounded-lg border border-indigo-100 dark:border-indigo-900/20">
+                        <p className="mb-2 text-sm font-medium flex items-center">
+                          <Music size={14} className="mr-2 text-primary-500 dark:text-primary-400" />
+                          15 minutos com Toninha - Entrevista com Juan Vidigal (Pág. 65)
+                        </p>
+                        <audio 
+                          controls 
+                          className="w-full" 
+                          preload="auto"
+                          aria-label="Áudio: 15 minutos com Toninha"
+                        >
+                          <source src="./audio/15m-toninha.mp3" type="audio/mpeg" />
+                          Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                        
+                        <button 
+                          onClick={() => window.open('./documents/caso.pdf#page=65', '_blank')}
+                          className="btn btn-primary w-full flex items-center justify-center mt-3"
+                        >
+                          <FileText size={16} className="mr-2" />
+                          Ver transcrição na página 65
+                        </button>
+                      </div>
                     </motion.div>
                     
                     <motion.div 
@@ -217,34 +243,6 @@ export default function FraternidadePurezaModal({
                         e proprietário do Instituto Esperança e Luz.
                       </p>
                     </motion.div>
-                  </div>
-                </motion.section>
-                
-                <motion.section 
-                  className="mb-3"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <div className="flex items-center mb-3">
-                    <div className="p-2 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mr-3">
-                      <Calendar size={18} />
-                    </div>
-                    <h3 className="text-xl font-serif font-semibold">História</h3>
-                  </div>
-                  <div className="bg-neutral-50 dark:bg-neutral-800/50 p-3 rounded-lg border border-neutral-100 dark:border-neutral-800">
-                    <p className="dark:text-neutral-300 text-sm leading-relaxed">
-                      <span className="inline-block w-3 h-3 rounded-full bg-indigo-500/20 mr-2"></span>
-                      Surgiu há cerca de 50 anos em Novas Veredas
-                    </p>
-                    <p className="dark:text-neutral-300 text-sm leading-relaxed mt-2">
-                      <span className="inline-block w-3 h-3 rounded-full bg-indigo-500/20 mr-2"></span>
-                      Fundada por médicos e líderes comunitários preocupados com o aumento do consumo de substâncias psicoativas
-                    </p>
-                    <p className="dark:text-neutral-300 text-sm leading-relaxed mt-2">
-                      <span className="inline-block w-3 h-3 rounded-full bg-indigo-500/20 mr-2"></span>
-                      Inicialmente um movimento de saúde pública, gradualmente adquiriu características religiosas
-                    </p>
                   </div>
                 </motion.section>
                 
@@ -275,121 +273,6 @@ export default function FraternidadePurezaModal({
                   </div>
                 </motion.section>
                 
-                <motion.section 
-                  className="mb-3"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  <div className="flex items-center mb-3">
-                    <div className="p-2 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mr-3">
-                      <BookOpen size={18} />
-                    </div>
-                    <h3 className="text-xl font-serif font-semibold">Práticas</h3>
-                  </div>
-                  <div className="bg-neutral-50 dark:bg-neutral-800/50 p-3 rounded-lg border border-neutral-100 dark:border-neutral-800">
-                    <ul className="space-y-2">
-                      <motion.li 
-                        className="flex items-start"
-                        initial={{ opacity: 0, x: -5 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.6 }}
-                      >
-                        <div className="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
-                          <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">1</span>
-                        </div>
-                        <span className="dark:text-neutral-300 text-sm">Rituais semanais de purificação</span>
-                      </motion.li>
-                      <motion.li 
-                        className="flex items-start"
-                        initial={{ opacity: 0, x: -5 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.65 }}
-                      >
-                        <div className="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
-                          <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">2</span>
-                        </div>
-                        <span className="dark:text-neutral-300 text-sm">Abstinência total de álcool, drogas e medicamentos psicotrópicos</span>
-                      </motion.li>
-                      <motion.li 
-                        className="flex items-start"
-                        initial={{ opacity: 0, x: -5 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.7 }}
-                      >
-                        <div className="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
-                          <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">3</span>
-                        </div>
-                        <span className="dark:text-neutral-300 text-sm">Meditação diária para "limpar a mente"</span>
-                      </motion.li>
-                      <motion.li 
-                        className="flex items-start"
-                        initial={{ opacity: 0, x: -5 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.75 }}
-                      >
-                        <div className="w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center mr-2 mt-0.5 flex-shrink-0">
-                          <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">4</span>
-                        </div>
-                        <span className="dark:text-neutral-300 text-sm">Doações regulares para o Instituto Esperança e Luz</span>
-                      </motion.li>
-                    </ul>
-                  </div>
-                </motion.section>
-                
-                {/* Audio section */}
-                <motion.section 
-                  className="mb-3"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 }}
-                >
-                  <div className="flex items-center mb-3">
-                    <div className="p-2 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mr-3">
-                      <Music size={18} />
-                    </div>
-                    <h3 className="text-xl font-serif font-semibold">Áudio</h3>
-                  </div>
-                  <div className="bg-neutral-50 dark:bg-neutral-800/50 p-3 rounded-lg border border-neutral-100 dark:border-neutral-800">
-                    <p className="mb-2 text-sm font-medium flex items-center">
-                      <Music size={14} className="mr-2 text-primary-500 dark:text-primary-400" />
-                      15 minutos com Toninha.mp3
-                    </p>
-                    <audio 
-                      controls 
-                      className="w-full" 
-                      preload="auto"
-                      aria-label="Áudio: 15 minutos com Toninha"
-                    >
-                      <source src="./audio/15m-toninha.mp3" type="audio/mpeg" />
-                      Seu navegador não suporta o elemento de áudio.
-                    </audio>
-                  </div>
-                </motion.section>
-                
-                {/* PDF Document section */}
-                <motion.section 
-                  className="mb-3"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                >
-                  <div className="flex items-center mb-3">
-                    <div className="p-2 rounded-lg bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 mr-3">
-                      <FileText size={18} />
-                    </div>
-                    <h3 className="text-xl font-serif font-semibold">Documento</h3>
-                  </div>
-                  <div className="bg-neutral-50 dark:bg-neutral-800/50 p-3 rounded-lg border border-neutral-100 dark:border-neutral-800">
-                    <button 
-                      onClick={() => window.open('./documents/caso.pdf#page=65', '_blank')}
-                      className="btn btn-primary w-full flex items-center justify-center"
-                    >
-                      <FileText size={16} className="mr-2" />
-                      Abrir documento na página 65
-                    </button>
-                  </div>
-                </motion.section>
               </div>
             </motion.div>
           </motion.div>

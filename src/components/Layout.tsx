@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { Scale } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 interface LayoutProps {
@@ -26,26 +25,6 @@ export default function Layout({ children }: LayoutProps) {
         {children}
       </main>
       
-      {/* Footer with legal-themed styling */}
-      <footer className="bg-neutral-800 dark:bg-neutral-950 text-white py-8 border-t border-neutral-700">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-lg font-serif font-semibold mb-4 flex items-center">
-                <Scale className="h-5 w-5 mr-2" />
-                Caso Religião Campeonato
-              </h2>
-              <p className="text-neutral-300 dark:text-neutral-400 text-sm max-w-md">
-                Um estudo de caso sobre as religiões minoritárias de Novas Veredas e seus impactos sociais, 
-                desenvolvido para uma competição de Visual Law.
-              </p>
-            </div>
-          </div>
-          <div className="mt-8 pt-6 border-t border-neutral-700 text-center text-sm text-neutral-400">
-            <p>&copy; {new Date().getFullYear()} Caso Religião Campeonato. Todos os direitos reservados.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

@@ -37,17 +37,8 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <span className="text-primary-700 dark:text-primary-400">Caso</span> Religião Campeonato
+              <span className="text-primary-700 dark:text-primary-400">Caso</span> Competição
             </motion.h1>
-            
-            <motion.p 
-              className="text-xl text-neutral-700 dark:text-neutral-300 max-w-2xl mx-auto mb-8 leading-relaxed"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              Um estudo imersivo sobre as religiões minoritárias de Novas Veredas, seus impactos sociais e as implicações jurídicas dos conflitos religiosos.
-            </motion.p>
           </motion.div>
         </div>
       </div>

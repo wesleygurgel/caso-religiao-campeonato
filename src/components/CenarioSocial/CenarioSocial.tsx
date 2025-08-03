@@ -124,18 +124,6 @@ export default function CenarioSocial() {
           </div>
           <div className="h-px bg-neutral-200 dark:bg-neutral-700 w-full max-w-xs"></div>
         </div>
-        
-        {/* Additional context section */}
-        <div className="prose prose-base sm:prose-lg dark:prose-invert mx-auto max-w-3xl px-2">
-          <h3 className="text-center font-serif text-xl sm:text-2xl">Sobre o Estado de Novas Veredas</h3>
-          <p className="text-neutral-700 dark:text-neutral-300">
-            Novas Veredas é um estado fictício onde diferentes grupos religiosos coexistem, 
-            cada um com suas próprias crenças, práticas e influências sociais. As tensões entre 
-            esses grupos, especialmente entre a Fraternidade da Pureza Divina e o Círculo das 
-            Ervas Eternas, formam o pano de fundo para importantes questões jurídicas relacionadas 
-            à liberdade religiosa e seus limites.
-          </p>
-        </div>
       </div>
 
       {/* Render the appropriate modal based on the selected religion */}
