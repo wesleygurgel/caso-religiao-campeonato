@@ -140,7 +140,8 @@ export const timelineData: TimelineData = {
       events: [
         {
           date: '24/06/2025',
-          description: 'Referência: audiência_de_instrução_e_julgamento.mp4 – Google Drive\nCom degravação textual disponível'
+          description: 'Referência: audiência_de_instrução_e_julgamento.mp4 – Google Drive\nCom degravação textual disponível',
+          externalUrl: 'https://drive.google.com/file/d/1C_aj-xq1XsKoCvU_7nzIgfCs4oIX9Oyi/view'
         }
       ]
     },
